@@ -1,11 +1,13 @@
 package com.pp.io.ex1;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
+import com.pp.io.ex1.Weather;
 import com.pp.io.ex1.WeatherService;
 
 public class WeatherMenu {
-
+	private HashMap<String, Weather> map;
 	
 	public void start() {
 		//1. 날씨 정보 초기화
@@ -36,7 +38,7 @@ public class WeatherMenu {
 					ws.init();
 					break;
 				case 2:
-					
+
 					break;
 				case 3:
 					
