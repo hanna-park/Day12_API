@@ -39,7 +39,7 @@ public class WeatherService {
 				
 				StringTokenizer st = new StringTokenizer(str,",");
 				
-				while(st.hasMoreTokens()) {
+				//while(st.hasMoreTokens()) {
 					Weather weather = new Weather();
 					weather.setCity(st.nextToken().trim()); //trim 앞뒤 공백 제거
 					weather.setGion(Double.parseDouble(st.nextToken().trim()));
@@ -51,7 +51,7 @@ public class WeatherService {
 					//System.out.println(weather.getGion());
 					//System.out.println(weather.getHumidity());
 					//System.out.println(weather.getStatus());
-				}		
+				//}		
 			
 				/*for(int i=0;i<ar.size();i++) {
 					System.out.println(ar.get(i).getCity());

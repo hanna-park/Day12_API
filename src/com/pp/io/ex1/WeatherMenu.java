@@ -1,5 +1,6 @@
 package com.pp.io.ex1;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -8,6 +9,8 @@ import com.pp.io.ex1.WeatherService;
 
 public class WeatherMenu {
 	private HashMap<String, Weather> map;
+	private WeatherView wv;
+	private WeatherService ws;
 	
 	public void start() {
 		//1. 날씨 정보 초기화
@@ -19,8 +22,11 @@ public class WeatherMenu {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		ArrayList<Weather> ar = null;
+		
 		boolean check = true;
-		WeatherService ws = new WeatherService();
+		ws = new WeatherService();
+		wv = new WeatherView();
 		
 		while(check) {
 			
@@ -35,10 +41,10 @@ public class WeatherMenu {
 			
 			switch(select) {
 				case 1:
-					ws.init();
+					ar = ws.init();
 					break;
 				case 2:
-
+					wv.view(ar);
 					break;
 				case 3:
 					
@@ -52,6 +58,10 @@ public class WeatherMenu {
 				case 6:
 					check = !check;
 					break;
+					
+				default:
+					System.out.println("잘못된 번호를 입력하였습니다.");
+					System.out.println("1~6사이의 번호를 입력하세요.");
 			
 			}
 			
